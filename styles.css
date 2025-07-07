@@ -72,7 +72,7 @@
   justify-content: space-between;
   gap: 55px;
   font-weight: 200;
-  line-height: 100%;
+  line-height: 100px;
   letter-spacing: 2px;
 }
 .nav-link {
@@ -124,7 +124,7 @@ h1 {
   letter-spacing: 2px;
   width: 360px;
   height: 75px;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: var(--red);
   text-align: center;
   padding-top: 25px;
@@ -140,7 +140,7 @@ h1 {
   right: 0;
   width: 1000px;
   height: 750px;
-  background-image: url("./assets/welcome/1.jpeg");
+  background-image: url("./assets/images/welcome/1.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -154,4 +154,104 @@ h1 {
   height: 100%;
   background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
   pointer-events: none;
+}
+
+
+/* visiting */
+
+.visiting {
+  height: 1116px;
+  padding: 75px 0;
+}
+.gold-title {
+  position: relative;
+  font-family: "Forum";
+  font-size: 80px;
+  letter-spacing: 5px;
+  line-height: 90px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 103px;
+}
+.gold-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -27px;
+  height: 3px;
+  width: 100%;
+  background-color: var(--red);
+}
+
+/* cards */
+.visiting-cards {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 75px;
+  column-gap: 60px;
+}
+.visiting-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 440px;
+  height: 424px;
+  cursor: pointer;
+}
+.card-image {
+  width: 440px;
+  height: 285px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.card-image-1 {
+  background-image: url("./assets/images/visiting/royal.jpeg");
+}
+.card-image-2 {
+  background-image: url("./assets/images/visiting/denon.jpeg");
+}
+.card-image-3 {
+  background-image: url("./assets/images/visiting/colonnade.jpeg");
+}
+.card-image-4 {
+  background-image: url("./assets/images/visiting/greek.jpeg");
+}
+.card-image-5 {
+  background-image: url("./assets/images/visiting/mona.jpeg");
+}
+.card-image-6 {
+  background-image: url("./assets/images/visiting/night.jpeg");
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  position: relative;
+  font-family: "Forum";
+  font-size: 32px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.card-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -10px;
+  height: 2px;
+  width: calc(100% - 140px);
+  background-color: var(--red);
+
+  transition: width .8s linear;
+}
+.visiting-card:hover .card-title:after {
+  width: 100%;
+}
+.virtual-text {
+  margin-bottom: 10px;
+}
+.panorama-text {
+  font-size: 18px;
 }
