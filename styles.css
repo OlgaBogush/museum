@@ -170,9 +170,9 @@ h1 {
   line-height: 90px;
   color: var(--gold);
   text-transform: uppercase;
-  margin-bottom: 103px;
+  margin-bottom: 75px;
 }
-.gold-title:after {
+.gold-title-red:after {
   position: absolute;
   content: "";
   left: 0;
@@ -188,6 +188,7 @@ h1 {
   flex-wrap: wrap;
   row-gap: 75px;
   column-gap: 60px;
+  padding-top: 28px;
 }
 .visiting-card {
   display: flex;
@@ -311,4 +312,57 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+
+/* video */
+
+.video {
+  padding: 75px 0;
+}
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+.video-intro {
+  display: flex;
+  justify-content: space-between;
+}
+.video-info {
+  line-height: 38.5px;
+  width: 720px;
+}
+.video-poster {
+  width: 1440px;
+  height: 650px;
+  background-image: url("./assets/images/video/poster0.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.video-panel {
+  height: 85px;
+  background-color: var(--dark);
+}
+.video-slider {
+  display: flex;
+  justify-content: space-between;
+  gap: 42px;
+  margin: 40px 0 52px 0;
+}
+.video-slide {
+  width: 452px;
+  height: 254px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.video-slide-1 {
+  background-image: url("./assets/images/video/poster1.jpeg");
+}
+.video-slide-2 {
+  background-image: url("./assets/images/video/poster2.jpeg");
+}
+.video-slide-3 {
+  background-image: url("./assets/images/video/poster3.jpeg");
 }
