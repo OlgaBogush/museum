@@ -160,7 +160,6 @@ h1 {
 /* visiting */
 
 .visiting {
-  height: 1116px;
   padding: 75px 0;
 }
 .gold-title {
@@ -254,4 +253,62 @@ h1 {
 }
 .panorama-text {
   font-size: 18px;
+}
+
+
+
+/* explore */
+
+.explore {
+  padding: 75px 0;
+  height: 865px;
+  background-color: var(--dark);
+}
+.explore-container {
+  display: flex;
+  justify-content: space-between;
+}
+.exlore-about {
+  display: flex;
+  flex-direction: column;
+  width: 660px;
+}
+.light-title {
+  position: relative;
+  font-family: "Forum";
+  font-size: 80px;
+  letter-spacing: 5px;
+  line-height: 90px;
+  color: var(--light);
+  text-transform: uppercase;
+  margin-bottom: 103px;
+}
+.light-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -27px;
+  height: 3px;
+  width: 100%;
+  background-color: var(--red);
+}
+.explore-info p {
+  color: var(--light);
+  line-height: 38.5px;
+  max-width: 645px;
+}
+.explore-info p:nth-child(2) {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.explore-yellow {
+  color: var(--gold);
+}
+.explore-image {
+  width: 720px;
+  height: 700px;
+  background-image: url("./assets/images/explore/color.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
