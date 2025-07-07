@@ -282,9 +282,9 @@ h1 {
   line-height: 90px;
   color: var(--light);
   text-transform: uppercase;
-  margin-bottom: 103px;
+  margin-bottom: 75px;
 }
-.light-title:after {
+.light-title-red:after {
   position: absolute;
   content: "";
   left: 0;
@@ -292,6 +292,9 @@ h1 {
   height: 3px;
   width: 100%;
   background-color: var(--red);
+}
+.explore-info {
+  margin-top: 28px;
 }
 .explore-info p {
   color: var(--light);
@@ -365,4 +368,13 @@ h1 {
 }
 .video-slide-3 {
   background-image: url("./assets/images/video/poster3.jpeg");
+}
+
+
+/* galery */
+
+.galery {
+  height: 2200px;
+  padding-top: 75px;
+  background-color: var(--dark);
 }
