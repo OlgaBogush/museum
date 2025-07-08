@@ -522,3 +522,15 @@ h1 {
   background-color: var(--dark);
   padding: 15px 37px;
 }
+
+
+/* parallax */
+
+.parallax {
+  height: 400px;
+  background-image: url("./assets/images/parallax/parallax.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
