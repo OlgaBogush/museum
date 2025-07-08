@@ -14,7 +14,9 @@
   font-weight: 100;
   font-size: 22px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* header */
 
 .header {
@@ -75,9 +77,10 @@
   gap: 55px;
 }
 .nav-link {
-  cursor: pointer;
   font-weight: 200;
   letter-spacing: 2px;
+  color: var(--light);
+  text-decoration: none;
 
   transition: color .2s linear;
 }
@@ -372,9 +375,9 @@ h1 {
 }
 
 
-/* galery */
+/* gallery */
 
-.galery {
+.gallery {
   height: 2200px;
   padding-top: 75px;
   background-color: var(--dark);
