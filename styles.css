@@ -534,3 +534,27 @@ h1 {
   background-size: cover;
   background-attachment: fixed;
 }
+
+
+/* contacts */
+.contacts {
+  padding: 75px 0;
+}
+.contacts-inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 27px;
+}
+.contacts-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.contacts-map {
+  width: 960px;
+  height: 620px;
+  border: 1px solid blue;
+}
+.contacts-info p {
+  margin-bottom: 25px;
+}
