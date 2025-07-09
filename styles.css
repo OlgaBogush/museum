@@ -1,10 +1,3 @@
-:root {
-  --dark: #030303;
-  --light: #FFFFFF;
-  --gold: #9d8665;
-  --red: #710707;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,6 +10,14 @@
 html {
   scroll-behavior: smooth;
 }
+:root {
+  --dark: #030303;
+  --light: #FFFFFF;
+  --gold: #9d8665;
+  --red: #710707;
+}
+
+
 /* header */
 
 .header {
@@ -48,7 +49,7 @@ html {
 .logo-img {
   width: 50px;
   height: 30px;
-  mask-image: url("./assets//svg/logo.svg");
+  mask-image: url("./assets/svg/logo.svg");
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: center;
@@ -99,6 +100,7 @@ html {
   position: relative;
   display: flex;
   justify-content: space-between;
+  height: 750px;
 }
 .welcome-title {
   position: absolute;
@@ -142,12 +144,48 @@ h1 {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/* carousel */
+.carousel {
+  /* border: 1px solid red; */
+  position: relative;
   width: 1000px;
   height: 750px;
-  background-image: url("./assets/images/welcome/1.jpeg");
+  overflow: hidden;
+}
+.item-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: -1000px;
+  height: 750px;
+}
+.item-container.smooth {
+  transition: left .5s ease-out;
+}
+.welcome-item {
+  width: 1000px;
+  height: 750px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
+}
+.welcome-item-1 {
+  background-image: url("./assets/images/welcome/1.jpeg");
+}
+.welcome-item-2 {
+  background-image: url("./assets/images/welcome/2.jpeg");
+}
+.welcome-item-3 {
+  background-image: url("./assets/images/welcome/3.jpeg");
+}
+.welcome-item-4 {
+  background-image: url("./assets/images/welcome/4.jpeg");
+}
+.welcome-item-5 {
+  background-image: url("./assets/images/welcome/5.jpeg");
 }
 .welcome-slider:after {
   content: "";
@@ -159,6 +197,65 @@ h1 {
   background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
   pointer-events: none;
 }
+.rectangle {
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  width: 600px;
+  height: 120px;
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 75px;
+}
+.rectangle-number {
+  display: flex;
+  color: var(--light);
+}
+.number-line {
+  margin: 0 10px;
+}
+.rectangle-squares {
+  display: flex;
+  gap: 25px;
+}
+.square {
+  width: 16px;
+  height: 16px;
+  background-color: var(--light);
+  cursor: pointer;
+}
+.square.active {
+  background-color: var(--gold);
+}
+.rectangle-arrows {
+  display: flex;
+  gap: 20px;
+}
+.arrow {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: var(--light);
+
+  transition: background-color .2s linear;
+}
+.arrow:hover {
+  background-color: var(--gold);
+}
+.arrow-left {
+  mask-image: url("./assets/svg/left.svg");
+}
+.arrow-right {
+  mask-image: url("./assets/svg/right.svg");
+}
+
 
 
 /* visiting */
@@ -200,7 +297,8 @@ h1 {
   justify-content: space-between;
   width: 440px;
   height: 424px;
-  cursor: pointer;
+  text-decoration: none;
+  color: var(--dark);
 }
 .card-image {
   width: 440px;
@@ -501,12 +599,12 @@ h1 {
 }
 .step-down {
   position: absolute;
-  top: 9px;
+  top: 7px;
   left: 10px;
 }
 .step-up {
   position: absolute;
-  top: 9px;
+  top: 7px;
   right: 10px;
 }
 .tickets-total {
@@ -531,6 +629,7 @@ h1 {
 /* parallax */
 
 .parallax {
+  width: 100%;
   height: 400px;
   background-image: url("./assets/images/parallax/parallax.jpg");
   background-repeat: no-repeat;

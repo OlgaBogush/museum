@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,7 @@
         <div class="logo-img"></div>
         <div class="logo-text">Louvre</div>
       </div>
-      <nav class="nav">
+      <nav class="nav header-nav">
         <ul class="nav-list">
           <li><a class="nav-link" href="#visiting">Visiting</a></li>
           <li><a class="nav-link" href="#explore">Explore</a></li>
@@ -39,63 +38,95 @@
         <div class="welcome-title">
           <h1>Welcome <br>to the Louvre</h1>
           <p class="welcome-subtitle">From the castle to the museum</p>
-          <a class="welcome-button" href="#">Discover the Louvre</a>
+          <a class="welcome-button"
+            href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+            target="_blank">Discover the Louvre</a>
         </div>
-        <div class="welcome-slider"></div>
+        <div class="welcome-slider">
+
+          <div class="carousel">
+            <div class="item-container">
+
+              <div class="welcome-item welcome-item-1"></div>
+              <div class="welcome-item welcome-item-2"></div>
+              <div class="welcome-item welcome-item-3"></div>
+              <div class="welcome-item welcome-item-4"></div>
+              <div class="welcome-item welcome-item-5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rectangle">
+          <div class="rectangle-number">
+            <p class="number-actual"></p>
+            <p class="number-line">|</p>
+            <p class="number-all"></p>
+          </div>
+          <ul class="rectangle-squares">
+            <li class="square"></li>
+            <li class="square"></li>
+            <li class="square"></li>
+            <li class="square"></li>
+            <li class="square"></li>
+          </ul>
+          <div class="rectangle-arrows">
+            <button class="arrow arrow-left"></button>
+            <button class="arrow arrow-right"></button>
+          </div>
+        </div>
       </div>
     </section>
     <section class="visiting" id="visiting">
       <div class="container">
         <h2 class="gold-title gold-title-red">Virtual tour</h2>
         <div class="visiting-cards">
-          <div class="visiting-card">
+          <a href="./tours/tour1.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-1"></div>
             <div class="card-info">
               <h3 class="card-title">Royal Palace</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
-          <div class="visiting-card">
+          </a>
+          <a href="./tours/tour2.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-2"></div>
             <div class="card-info">
               <h3 class="card-title">Denon Wing</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
-          <div class="visiting-card">
+          </a>
+          <a href="./tours/tour3.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-3"></div>
             <div class="card-info">
               <h3 class="card-title">Colonnade Perrault</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
-          <div class="visiting-card">
+          </a>
+          <a href="./tours/tour4.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-4"></div>
             <div class="card-info">
               <h3 class="card-title">Greek hall</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
-          <div class="visiting-card">
+          </a>
+          <a href="./tours/tour5.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-5"></div>
             <div class="card-info">
               <h3 class="card-title">Mona Lisa</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
-          <div class="visiting-card">
+          </a>
+          <a href="./tours/tour6.html" class="visiting-card" target="_blank">
             <div class="card-image card-image-6"></div>
             <div class="card-info">
               <h3 class="card-title">Night Palace</h3>
               <p class="virtual-text">360° Virtual Tour</p>
               <p class="panorama-text">Google Street Panorama View</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -273,6 +304,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="./index.js"></script>
 </body>
 
 </html>
