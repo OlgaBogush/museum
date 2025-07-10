@@ -410,14 +410,46 @@ h1 {
 .explore-yellow {
   color: var(--gold);
 }
-.explore-image {
+/* compare images */
+.explore-wrapper {
+  position: relative;
   width: 720px;
   height: 700px;
-  background-image: url("./assets/images/explore/color.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
+.explore-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+.explore-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--light);
+  border-radius: 50%;
+}
+.explore-slider:before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 335px;
+  background-color: var(--light);
+  top: -338px;
+  left: 13px;
+}
+.explore-slider:after {
+position: absolute;
+content: "";
+width: 5px;
+height: 330px;
+background-color: var(--light);
+left: 13px;
+top: 32px;
+}
+
 
 
 /* video */
