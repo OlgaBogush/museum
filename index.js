@@ -262,19 +262,7 @@ function toggleFullScreen() {
   }
 }
 
-video.addEventListener("click", togglePlay)
-playIcon.addEventListener("click", togglePlay)
-buttonPlay.addEventListener("click", togglePlay)
-buttonPause.addEventListener("click", togglePlay)
-
-video.addEventListener("play", updateButton)
-video.addEventListener("pause", updateButton)
-buttonVolume.addEventListener("click", toggleMute)
-buttonMute.addEventListener("click", toggleMute)
-fullScreen.addEventListener("click", toggleFullScreen)
-fullExit.addEventListener("click", toggleFullScreen)
-
-document.addEventListener("fullscreenchange", () => {
+function updateIconFullScreen() {
   if (document.fullscreenElement) {
     mainVideo.classList.add("full")
     fullScreen.classList.add("not-active")
@@ -284,6 +272,20 @@ document.addEventListener("fullscreenchange", () => {
     fullScreen.classList.remove("not-active")
     fullExit.classList.remove("active")
   }
-})
+}
+
+video.addEventListener("click", togglePlay)
+playIcon.addEventListener("click", togglePlay)
+buttonPlay.addEventListener("click", togglePlay)
+buttonPause.addEventListener("click", togglePlay)
+
+video.addEventListener("play", updateButton)
+video.addEventListener("pause", updateButton)
+buttonVolume.addEventListener("click", toggleMute)
+buttonMute.addEventListener("click", toggleMute)
+
+fullScreen.addEventListener("click", toggleFullScreen)
+fullExit.addEventListener("click", toggleFullScreen)
+document.addEventListener("fullscreenchange", updateIconFullScreen)
 
 
