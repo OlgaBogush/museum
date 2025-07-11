@@ -223,6 +223,8 @@ const buttonVolume = document.querySelector(".button-volume")
 const buttonMute = document.querySelector(".button-mute")
 const fullScreen = document.querySelector(".button-fullscreen")
 const fullExit = document.querySelector(".button-fullexit")
+const progress = document.querySelector(".input-progress")
+const volume = document.querySelector(".input-volume")
 
 
 function togglePlay() {
@@ -274,6 +276,37 @@ function updateIconFullScreen() {
   }
 }
 
+function inputRange(input) {
+  const value = input.value
+  input.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #C4C4C4 ${value}%, #C4C4C4 100%)`
+}
+
+function handleProgress() {
+  const percent = video.currentTime / video.duration * 100 || 0
+  progress.value = percent
+  inputRange(progress)
+}
+
+function changeProgress() {
+  video.currentTime = this.value / 100 * video.duration
+  if(video.currentTime < video.duration) {
+    video.play()
+  }
+}
+
+function changeVolume() {
+  video.volume = this.value / 100
+  if(video.volume <= 0.01) {
+    video.muted = true
+    buttonVolume.style.display = "none"
+    buttonMute.style.display = "block"
+  } else {
+    video.muted = false
+    buttonMute.style.display = "none"
+    buttonVolume.style.display = "block"
+  }
+}
+
 video.addEventListener("click", togglePlay)
 playIcon.addEventListener("click", togglePlay)
 buttonPlay.addEventListener("click", togglePlay)
@@ -287,5 +320,13 @@ buttonMute.addEventListener("click", toggleMute)
 fullScreen.addEventListener("click", toggleFullScreen)
 fullExit.addEventListener("click", toggleFullScreen)
 document.addEventListener("fullscreenchange", updateIconFullScreen)
+
+video.addEventListener("timeupdate", handleProgress)
+progress.addEventListener("input", () => inputRange(progress))
+progress.addEventListener("input", changeProgress)
+
+volume.addEventListener("input", () => inputRange(volume))
+volume.addEventListener("input", changeVolume)
+
 
 
