@@ -10,6 +10,9 @@
 html {
   scroll-behavior: smooth;
 }
+button {
+  all: unset;
+}
 :root {
   --dark: #030303;
   --light: #FFFFFF;
@@ -469,18 +472,108 @@ top: 32px;
   line-height: 38.5px;
   width: 720px;
 }
-.video-poster {
-  width: 1440px;
-  height: 650px;
-  background-image: url("./assets/images/video/poster0.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.video-player {
+  display: flex;
+  flex-direction: column;
 }
+.main-video {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.video-poster {
+  width: 100%;
+  height: auto;
+}
+.play-icon {
+  position: absolute;
+  top: calc(50% - 110px);
+  left: calc(50% - 110px);
+  width: 220px;
+  height: 220px;
+  cursor: pointer;
+
+  transition: all .2s linear;
+}
+.play-icon:hover {
+  filter: brightness(95%) contrast(90%);
+}
+
+/* controls */
 .video-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 85px;
+  padding: 0 25px;
   background-color: var(--dark);
 }
+.input-progress {
+  appearance: none;
+  width: 929px;
+  height: 8px;
+  background: linear-gradient(to right, var(--red) 0%, var(--red) 40%, #C4C4C4 40%, #C4C4C4 100%);
+  cursor: pointer;
+}
+.input-progress::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--light);
+}
+.input-progress::-moz-range-thumb {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--light);
+}
+.input-volume {
+  appearance: none;
+  width: 155px;
+  height: 8px;
+  background: linear-gradient(to right, var(--red) 0%, var(--red) 20%, #C4C4C4 20%, #C4C4C4 100%);
+  cursor: pointer;
+}
+.input-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--light);
+}
+.input-volume::-moz-range-thumb {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--light);
+}
+.video-btn {
+  cursor: pointer;
+
+  transition: all .2s linear;
+}
+.video-btn:hover {
+  filter: brightness(80%) contrast(80%);
+}
+.button-mute,
+.button-pause,
+.button-fullexit {
+  display: none;
+}
+
+
+
 .video-slider {
   display: flex;
   justify-content: space-between;

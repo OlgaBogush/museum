@@ -210,3 +210,69 @@ function initComparisons() {
 }
 
 initComparisons()
+
+
+// video player
+const player = document.querySelector(".video-player")
+const video = document.querySelector(".video-poster")
+const playIcon = document.querySelector(".play-icon")
+const buttonPlay = document.querySelector(".button-play")
+const buttonPause = document.querySelector(".button-pause")
+const buttonVolume = document.querySelector(".button-volume")
+const buttonMute = document.querySelector(".button-mute")
+const fullScreen = document.querySelector(".button-fullscreen")
+const fullExit = document.querySelector(".button-fullexit")
+
+
+function togglePlay() {
+  const method = video.paused ? "play" : "pause"
+  video[method]()
+}
+
+function updateButton() {
+  if(this.paused) {
+    playIcon.style.display = "block"
+    buttonPause.style.display = "none"
+    buttonPlay.style.display = "block"
+  } else {
+    playIcon.style.display = "none"
+    buttonPlay.style.display = "none"
+    buttonPause.style.display = "block"
+  }
+}
+
+function toggleMute() {
+  if(video.muted) {
+    video.muted = false
+    buttonMute.style.display = "none"
+    buttonVolume.style.display = "block"
+  } else {
+    video.muted = true
+    buttonVolume.style.display = "none"
+    buttonMute.style.display = "block"
+  }
+}
+
+function toggleFullScreen() {
+  if(document.fullscreenElement) {
+    document.exitFullscreen()
+    fullScreen.style.display = "block"
+    fullExit.style.display = "none"
+  } else {
+    player.requestFullscreen()
+    fullScreen.style.display = "none"
+    fullExit.style.display = "block"
+  }
+}
+
+video.addEventListener("click", togglePlay)
+playIcon.addEventListener("click", togglePlay)
+buttonPlay.addEventListener("click", togglePlay)
+buttonPause.addEventListener("click", togglePlay)
+
+video.addEventListener("play", updateButton)
+video.addEventListener("pause", updateButton)
+buttonVolume.addEventListener("click", toggleMute)
+buttonMute.addEventListener("click", toggleMute)
+fullScreen.addEventListener("click", toggleFullScreen)
+fullExit.addEventListener("click", toggleFullScreen)
