@@ -214,6 +214,7 @@ initComparisons()
 
 // video player
 const player = document.querySelector(".video-player")
+const mainVideo = document.querySelector(".main-video")
 const video = document.querySelector(".video-poster")
 const playIcon = document.querySelector(".play-icon")
 const buttonPlay = document.querySelector(".button-play")
@@ -230,7 +231,7 @@ function togglePlay() {
 }
 
 function updateButton() {
-  if(this.paused) {
+  if (this.paused) {
     playIcon.style.display = "block"
     buttonPause.style.display = "none"
     buttonPlay.style.display = "block"
@@ -242,7 +243,7 @@ function updateButton() {
 }
 
 function toggleMute() {
-  if(video.muted) {
+  if (video.muted) {
     video.muted = false
     buttonMute.style.display = "none"
     buttonVolume.style.display = "block"
@@ -254,14 +255,10 @@ function toggleMute() {
 }
 
 function toggleFullScreen() {
-  if(document.fullscreenElement) {
+  if (document.fullscreenElement) {
     document.exitFullscreen()
-    fullScreen.style.display = "block"
-    fullExit.style.display = "none"
   } else {
     player.requestFullscreen()
-    fullScreen.style.display = "none"
-    fullExit.style.display = "block"
   }
 }
 
@@ -276,3 +273,17 @@ buttonVolume.addEventListener("click", toggleMute)
 buttonMute.addEventListener("click", toggleMute)
 fullScreen.addEventListener("click", toggleFullScreen)
 fullExit.addEventListener("click", toggleFullScreen)
+
+document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+    mainVideo.classList.add("full")
+    fullScreen.classList.add("not-active")
+    fullExit.classList.add("active")
+  } else {
+    mainVideo.classList.remove("full")
+    fullScreen.classList.remove("not-active")
+    fullExit.classList.remove("active")
+  }
+})
+
+
