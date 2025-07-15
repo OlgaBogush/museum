@@ -330,3 +330,10 @@ volume.addEventListener("input", changeVolume)
 
 
 
+// slick-slider for video sectionn
+$(document).ready(function(){
+  $(".main-video").slick({
+    dots: true,
+    
+  })
+})
