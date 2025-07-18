@@ -215,7 +215,8 @@ initComparisons()
 // video player
 const player = document.querySelector(".video-player")
 const mainVideo = document.querySelector(".main-video")
-const video = document.querySelector(".video-poster")
+const videoCollection = document.querySelectorAll(".video-poster")
+let video = videoCollection[0]
 const playIcon = document.querySelector(".play-icon")
 const buttonPlay = document.querySelector(".button-play")
 const buttonPause = document.querySelector(".button-pause")
@@ -307,13 +308,13 @@ function changeVolume() {
   }
 }
 
-video.addEventListener("click", togglePlay)
+videoCollection.forEach((item) => item.addEventListener("click", togglePlay))
 playIcon.addEventListener("click", togglePlay)
 buttonPlay.addEventListener("click", togglePlay)
 buttonPause.addEventListener("click", togglePlay)
 
-video.addEventListener("play", updateButton)
-video.addEventListener("pause", updateButton)
+videoCollection.forEach((item) => item.addEventListener("play", updateButton))
+videoCollection.forEach((item) => item.addEventListener("pause", updateButton))
 buttonVolume.addEventListener("click", toggleMute)
 buttonMute.addEventListener("click", toggleMute)
 
@@ -321,19 +322,39 @@ fullScreen.addEventListener("click", toggleFullScreen)
 fullExit.addEventListener("click", toggleFullScreen)
 document.addEventListener("fullscreenchange", updateIconFullScreen)
 
-video.addEventListener("timeupdate", handleProgress)
+videoCollection.forEach((item) =>
+  item.addEventListener("timeupdate", handleProgress)
+)
 progress.addEventListener("input", () => inputRange(progress))
 progress.addEventListener("input", changeProgress)
 
 volume.addEventListener("input", () => inputRange(volume))
 volume.addEventListener("input", changeVolume)
 
-
-
-// slick-slider for video sectionn
-$(document).ready(function(){
+// slick-slider for video section
+$(document).ready(function () {
   $(".main-video").slick({
+    arrows: false,
+    asNavFor: ".video-slider"
+  })
+  $(".video-slider").slick({
+    slidesToShow: 3,
     dots: true,
-    
+    asNavFor: ".main-video"
+  })
+  $(".video-slider").on("afterChange", function(event, slick, currentSlide) {
+    if(!video.paused) {
+      video.currentTime = 0
+      video.pause()
+    }
+    video.muted = false
+    buttonMute.style.display = "none"
+    buttonVolume.style.display = "block"
+    video = videoCollection[currentSlide]
   })
 })
+
+
+
+
+
