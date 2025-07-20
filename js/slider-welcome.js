@@ -28,6 +28,42 @@ export default function sliderWelcome() {
   let progressItem = document.querySelectorAll(".square")
   progressItem[index].classList.add("active")
 
+  progressItem.forEach((el, i) => el.addEventListener("click", () => {
+    if(index === i) {
+      return
+    }
+    progressItem[index].classList.remove("active")
+    items.classList.add("smooth")
+    if (allowShift) {
+      if(i === 0) {
+        items.style.left = -slideSize + "px"
+        posInitial = -slideSize
+        index = 0
+      }
+      if(i === 1) {
+        items.style.left = -slideSize * 2 + "px"
+        posInitial = -slideSize * 2
+        index = 1
+      }
+      if(i === 2) {
+        items.style.left = -slideSize * 3 + "px"
+        posInitial = -slideSize * 3
+        index = 2
+      }
+      if(i === 3) {
+        items.style.left = -slideSize * 4 + "px"
+        posInitial = -slideSize * 4
+        index = 3
+      }
+      if(i === 4) {
+        items.style.left = -slideSize * 5 + "px"
+        posInitial = -slideSize * 5
+        index = 4
+      }
+    }
+    allowShift = false
+  }))
+
   function shiftSlidePrev() {
     progressItem[index].classList.remove("active")
     items.classList.add("smooth")

@@ -444,13 +444,13 @@ h1 {
   left: 13px;
 }
 .explore-slider:after {
-position: absolute;
-content: "";
-width: 5px;
-height: 330px;
-background-color: var(--light);
-left: 13px;
-top: 32px;
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 330px;
+  background-color: var(--light);
+  left: 13px;
+  top: 32px;
 }
 
 
@@ -584,8 +584,7 @@ top: 32px;
   position: relative;
   height: 254px;
   margin: 40px 0 40px 0;
-
-  border: 1px solid red;
+  overflow: hidden;
 }
 .video-slider {
   position: absolute;
@@ -639,8 +638,6 @@ top: 32px;
 .pagination-dot:hover {
   filter: brightness(80%) contrast(80%);
 }
-
-
 
 
 
