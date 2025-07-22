@@ -836,11 +836,11 @@ h1 {
   font-weight: bold;
 }
 .tickets-button {
-  text-decoration: none;
   color: var(--light);
   letter-spacing: 2px;
   background-color: var(--dark);
   padding: 15px 37px;
+  cursor: pointer;
 
   transition: all .2s linear;
 }
@@ -855,12 +855,50 @@ h1 {
 
 /* modal */
 
-.modal {
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
   width: 1440px;
   height: 845px;
+  transform: translate(-100%, 0) scale(0);
+
+  transition: .2s ease-in-out;
+}
+.popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+
+  transition: .2s ease-in-out;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal {
+  position: relative;
   padding: 91px 235px;
+  background-color: var(--light);
 
   border: 1px solid yellowgreen;
+}
+.modal-close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
 }
 .modal-inner {
   display: flex;
