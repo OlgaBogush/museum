@@ -803,6 +803,10 @@ h1 {
   position: relative;
   margin-top: 15px;
 }
+.tickets-senior-container {
+  position: relative;
+  margin-top: 15px;
+}
 .step {
   padding: 0;
   border: none;
@@ -811,7 +815,8 @@ h1 {
   background-color: transparent;
 
   font-size: 32px;
-  font-weight: 200;
+  line-height: 37px;
+  font-weight: 400;
   cursor: pointer;
   color: var(--dark);
 }
@@ -862,9 +867,9 @@ h1 {
   z-index: 100;
   width: 1440px;
   height: 845px;
-  transform: translate(-100%, 0) scale(0);
+  transform: translate(-150%, -50%) scale(0, 1);
 
-  transition: .2s ease-in-out;
+  transition: all .5s ease 0s;
 }
 .popup.active {
   transform: translate(-50%, -50%) scale(1);
@@ -879,7 +884,7 @@ h1 {
   pointer-events: none;
   opacity: 0;
 
-  transition: .2s ease-in-out;
+  transition: all .2s linear;
 }
 .overlay.active {
   opacity: 1;
