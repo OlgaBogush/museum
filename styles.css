@@ -841,7 +841,401 @@ h1 {
   letter-spacing: 2px;
   background-color: var(--dark);
   padding: 15px 37px;
+
+  transition: all .2s linear;
 }
+.tickets-button:hover {
+  background-color: var(--gold);
+  color: var(--dark);
+}
+
+
+
+
+
+/* modal */
+
+.modal {
+  width: 1440px;
+  height: 845px;
+  padding: 91px 235px;
+
+  border: 1px solid yellowgreen;
+}
+.modal-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-left {
+  width: 400px;
+}
+.booking-title {
+  position: relative;
+  font-family: "Forum";
+  font-size: 50px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.booking-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -45px;
+  height: 3px;
+  width: 100%;
+  background-color: var(--red);
+}
+.booking-subtitle {
+  color: #710707;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+.date-container  {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.input-date, .input-time {
+  position: relative;
+  width: 190px;
+  height: 45px;
+  border: 1px solid var(--dark);
+}
+.input-date input, .input-time input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0;
+}
+.input-date-icon, .input-time-icon {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.input-date-title, .input-time-title {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 400;
+  top: 13px;
+  left: 45px;
+}
+.input-date-arrow, .input-time-arrow {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+::-webkit-calendar-picker-indicator {
+  background: var(--light);
+  cursor: pointer;
+}
+.input-name, .input-email, .input-phone {
+  position: relative;
+  width: 400px;
+  height: 45px;
+  border: 1px solid var(--dark);
+  margin-top: 20px;
+}
+.input-name input, .input-email input, .input-phone input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  padding-left: 43px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.input-name-icon, .input-email-icon, .input-phone-icon {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  z-index: 5;
+}
+.select-type {
+  position: relative;
+  width: 400px;
+  height: 45px;
+  border: 1px solid var(--dark);
+  margin-top: 20px;
+}
+.select-type select {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  z-index: 5;
+  padding-left: 43px;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: transparent;
+  cursor: pointer;
+}
+.select-type-icon, .select-type-arrow {
+  position: absolute;
+  top: 10px;
+}
+.select-type-icon {
+  left: 15px;
+}
+.select-type-arrow {
+  right: 15px;
+}
+.entry-ticket {
+  border: 1px solid var(--dark);
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+.entry-title {
+  position: relative;
+  font-family: "Forum";
+  font-size: 18px;
+  color: var(--gold);
+  text-transform: capitalize;
+}
+.entry-title:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--red);
+}
+.entry-ticket-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.label-ticket {
+  font-size: 18px;
+  font-weight: 400;
+}
+.entry-ticket-input {
+  position: relative;
+  width: 105px;
+  height: 25px;
+  border: 1px solid var(--dark);
+}
+.entry-ticket-input input {
+  all: unset;
+  position: absolute;
+  left: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  width: 36px;
+  height: 24px;
+}
+.btn-minus, .btn-plus {
+  position: absolute;
+  top: 0;
+  width: 36px;
+  height: 24px;
+  text-align: center;
+  background-color: var(--dark);
+  color: var(--light);
+  cursor: pointer;
+}
+.btn-minus {
+  left: 0;
+}
+.btn-plus {
+  right: 0;
+}
+
+
+.modal-right {
+  width: 530px;
+  border: 1px solid var(--dark);
+  padding: 25px 30px;
+  background-image: url("./assets/images/booking/booking-louvre.jpg");
+  background-repeat: no-repeat;
+  background-position: top 25px right 30px;
+  background-size: 150px 120px;
+}
+.overview-title {
+  font-size: 32px;
+  font-weight: 500;
+}
+.louvre-title {
+  font-weight: 500;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.overview-date, .overview-time, .overview-type {
+  display: flex;
+}
+.overview-date-icon, .overview-time-icon, .overview-type-icon {
+  margin-right: 15px;
+}
+.overview-date-title, .overview-time-title, .overview-type-title  {    
+  font-size: 18px;
+  font-weight: 300;
+}
+.overview-type {
+  margin-bottom: 22px;
+}
+.overview-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.wrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.basic-title-all, .basic-price-all, .senior-title-all, .senior-price-all {
+  font-weight: 400;
+}
+.basic-quantity-all, .senior-quantity-all {
+  width: 32px;
+  height: 20px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--dark);
+  color: #A4A4A3;
+  margin-right: 12px;
+}
+.overview-total {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+.overview-total-title {
+  font-size: 32px;
+  font-weight: 400;
+}
+.overview-total-all {
+  font-size: 32px;
+  font-weight: 500;
+}
+.overview-total::before {
+  position: absolute;
+  top: -10px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--red);
+}
+.overview-cards {
+  position: relative;
+  height: 241px;
+  margin-bottom: 26px;
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 360px;
+  height: 211px;
+  border-radius: 5px;
+}
+.card-front {
+  z-index: 5;
+  background-color: #BCBCBC;
+  padding: 15px 20px;
+}
+.visa {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  width: 55px;
+  height: 16px;
+}
+.mastercard {
+  position: absolute;
+  top: 65px;
+  right: 20px;
+  width: 53px;
+  height: 32px;
+}
+.overview-cards label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--dark);
+}
+.cart-number {
+  display: block;
+  width: 215px;
+  height: 35px;
+  font-size: 18px;
+}
+.expiration-date-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 215px;
+}
+.input-month, .input-year {
+  width: 100px;
+  height: 35px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.cardholder-name {
+  width: 320px;
+  height: 35px;
+  font-size: 18px;
+}
+.card-back {
+  top: 30px;
+  left: 110px;
+  background-color: #939393;
+  z-index: 3;
+}
+.tape {
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  height: 45px;
+  background-color: var(--dark);
+  z-index: 4;
+}
+.cvc-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 15px;
+  right: 20px;
+  width: 75px;
+}
+.input-cvc {
+  display: block;
+  width: 75px;
+  height: 35px;
+  font-size: 18px;
+  margin: 5px  0;
+  text-align: center;
+}
+.cvc-title {
+  font-size: 12px;
+  font-weight: 400;
+}
+.cvc-info {
+  font-size: 10px;
+  font-weight: 400;
+}
+.button-submit {
+  position: absolute;
+  bottom: -71px;
+  right: 0;
+  z-index: 10;
+  color: var(--light);
+  background-color: var(--red);
+  padding: 11px 85px;
+  cursor: pointer;
+
+  transition: background-color .2s linear;
+}
+.button-submit:hover {
+  background-color: var(--gold);
+}
+
 
 
 /* parallax */
