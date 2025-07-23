@@ -19,18 +19,4 @@ export default function popup() {
     overlay.classList.remove("active")
     document.documentElement.style.overflow = ""
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

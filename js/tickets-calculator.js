@@ -1,4 +1,4 @@
-export default function getTickets() {
+export default function calculatorTickets() {
   const radioButtons = document.querySelectorAll(".radio")
   const totalElement = document.querySelector(".total-euro")
   const amountBasicElement = document.querySelector(".tickets-basic-container")

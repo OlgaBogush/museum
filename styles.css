@@ -1308,10 +1308,9 @@ h1 {
   font-weight: 500;
   margin-bottom: 50px;
 }
-.contacts-map {
+#map {
   width: 960px;
   height: 620px;
-  border: 1px solid blue;
 }
 .contacts-info p {
   margin-bottom: 25px;
@@ -1399,4 +1398,11 @@ footer {
 }
 .user:hover {
   color: var(--gold);
+}
+
+
+@media (max-width: 767px) {
+  body {
+    background-color: yellowgreen;
+  }
 }
