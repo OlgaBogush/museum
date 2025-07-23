@@ -348,15 +348,15 @@
             <div class="tickets-type">
               <h4 class="tickets-title tickets-title-type">Ticket Type</h4>
               <label class="label-type">Permanent exhibition
-                <input class="radio" type="radio" name="radio" data-price="20" checked>
+                <input class="radio" type="radio" name="radio" data-price="20" data-type="Permanent exhibition" checked>
                 <span class="checkmark"></span>
               </label>
               <label class="label-type">Temporary exhibition
-                <input class="radio" type="radio" name="radio" data-price="25">
+                <input class="radio" type="radio" name="radio" data-price="25" data-type="Temporary exhibition">
                 <span class="checkmark"></span>
               </label>
               <label class="label-type">Combined Admission
-                <input class="radio" type="radio" name="radio" data-price="40">
+                <input class="radio" type="radio" name="radio" data-price="40" data-type="Combined Admission">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -502,16 +502,16 @@
             </div>
             <select tabindex="6" name="select" id="input-ticket-type">
               <option value="" disabled selected hidden>Ticket Type</option>
-              <option value="permanent">Permanent exhibition</option>
-              <option value="temporary">Temporary exhibition</option>
-              <option value="combined">Combined Admission</option>
+              <option class="option-type" value="20">Permanent exhibition</option>
+              <option class="option-type" value="25">Temporary exhibition</option>
+              <option class="option-type" value="40">Combined Admission</option>
             </select>
           </div>
           <div class="entry-ticket">
             <h6 class="entry-title">Entry ticket</h6>
             <div class="entry-ticket-container">
-              <label class="label-ticket" for="entry-basic-input">Basic 18+ (20 €)</label>
-              <div class="entry-ticket-input">
+              <label class="label-ticket-bas" for="entry-basic-input">Basic 18+ (20 €)</label>
+              <div class="entry-ticket-input entry-ticket-input-bas">
                 <button class="btn-minus" tabindex="7" type="button"
                   onclick="this.nextElementSibling.stepDown()">-</button>
                 <input type="number" value="1" name="entry-basic" id="entry-basic-input" min="0" max="20" readonly>
@@ -520,8 +520,8 @@
               </div>
             </div>
             <div class="entry-ticket-container">
-              <label class="label-ticket" for="entry-senior-input">Senior 65+ (10 €)</label>
-              <div class="entry-ticket-input">
+              <label class="label-ticket-sen" for="entry-senior-input">Senior 65+ (10 €)</label>
+              <div class="entry-ticket-input entry-ticket-input-sen">
                 <button class="btn-minus" tabindex="9" type="button"
                   onclick="this.nextElementSibling.stepDown()">-</button>
                 <input type="number" value="1" name="entry-senior" id="entry-senior-input" min="0" max="20" readonly>

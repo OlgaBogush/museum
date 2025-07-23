@@ -1052,7 +1052,7 @@ h1 {
   justify-content: space-between;
   margin-top: 20px;
 }
-.label-ticket {
+.label-ticket-bas, .label-ticket-sen {
   font-size: 18px;
   font-weight: 400;
 }
