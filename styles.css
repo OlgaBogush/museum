@@ -890,6 +890,36 @@ h1 {
   opacity: 1;
   pointer-events: all;
 }
+
+/* error */
+
+.form-input._error {
+  border: 1px solid red;
+}
+.error-message-name, .error-message-email, .error-message-phone {
+  position: absolute;
+  width: 400px;
+  min-height: 45px;
+  top: 70%;
+  left: 10%;
+  z-index: 200;
+  padding: 5px 10px;
+  font-weight: 100;
+  font-size: 18px;
+  border-radius: 10px;
+  color: var(--red);
+  border: 1px solid var(--red);
+  background-color: var(--light);
+  opacity: 0;
+
+  transition: opacity .2 linear;
+}
+.input-name._active .error-message-name,
+.input-email._active .error-message-email,
+.input-phone._active .error-message-phone {
+  opacity: 1;
+}
+
 .modal {
   position: relative;
   padding: 91px 235px;
