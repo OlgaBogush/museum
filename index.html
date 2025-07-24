@@ -388,7 +388,7 @@
           <p class="booking-subtitle">Tour to Louvre</p>
           <div class="date-container">
             <div class="input-date">
-              <input tabindex="1" type="date" name="date" id="input-date">
+              <input tabindex="1" type="date" value="" name="date" id="input-date">
               <div class="input-date-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                   <path
@@ -409,7 +409,7 @@
               </div>
             </div>
             <div class="input-time">
-              <input tabindex="2" type="time" name="time" id="input-time">
+              <input class="_time _rec" tabindex="2" type="time" name="time" id="input-time" required>
               <div class="input-time-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
                   <path
@@ -425,10 +425,11 @@
                     fill="#030303" />
                 </svg>
               </div>
+              <p class="error-message-time">The time can be selected from 9:00 to 18:00</p>
             </div>
           </div>
           <div class="input-name">
-            <input class="form-input _name _rec"  tabindex="3" type="text" value="" id="input-name" placeholder="Name" required>
+            <input class="form-input _name _rec" tabindex="3" type="text" value="" id="input-name" placeholder="Name" required>
             <div class="input-name-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
                 <path
@@ -528,7 +529,7 @@
                   fill="#030303" />
               </svg>
             </div>
-            <p class="overview-date-title">Friday, August 19</p>
+            <p class="overview-date-title"></p>
           </div>
           <div class="overview-time">
             <div class="overview-time-icon">
@@ -538,7 +539,7 @@
                   fill="#030303" />
               </svg>
             </div>
-            <p class="overview-time-title">16 : 30</p>
+            <p class="overview-time-title"></p>
           </div>
           <div class="overview-type">
             <div class="overview-type-icon">

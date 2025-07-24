@@ -891,11 +891,8 @@ h1 {
   pointer-events: all;
 }
 
-/* error */
+/* error name, email, phone */
 
-.form-input._error {
-  border: 1px solid red;
-}
 .error-message-name, .error-message-email, .error-message-phone {
   position: absolute;
   width: 400px;
@@ -918,6 +915,11 @@ h1 {
 .input-email._active .error-message-email,
 .input-phone._active .error-message-phone {
   opacity: 1;
+}
+.input-name._active,
+.input-email._active,
+.input-phone._active {
+  box-shadow: 0 0 15px red;
 }
 
 .modal {
@@ -974,7 +976,36 @@ h1 {
   width: 190px;
   height: 45px;
   border: 1px solid var(--dark);
+
+  transition: all .1s linear;
 }
+/* error time */
+.error-message-time {
+  position: absolute;
+  width: 190px;
+  min-height: 45px;
+  top: 70%;
+  left: 10%;
+  z-index: 200;
+  padding: 5px 10px;
+  font-weight: 100;
+  font-size: 18px;
+  border-radius: 10px;
+  color: var(--red);
+  border: 1px solid var(--red);
+  background-color: var(--light);
+  opacity: 0;
+
+  transition: opacity .2 linear;
+}
+.input-time._active {
+  box-shadow: 0 0 15px red;
+}
+.input-time._active .error-message-time {
+  opacity: 1;
+}
+
+
 .input-date input, .input-time input {
   position: absolute;
   width: 100%;
@@ -1009,6 +1040,8 @@ h1 {
   height: 45px;
   border: 1px solid var(--dark);
   margin-top: 20px;
+
+  transition: all .1s linear;
 }
 .input-name input, .input-email input, .input-phone input {
   position: absolute;
