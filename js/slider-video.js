@@ -178,13 +178,13 @@ export default function sliderVideo() {
         indexDots = 2
         break
       case 5:
-        indexDots = 1
+        indexDots = 0
         break
       case 6:
-        indexDots = 2
+        indexDots = 1
         break
       case 7:
-        indexDots = 3
+        indexDots = 2
         break
     }
   }

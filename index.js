@@ -5,7 +5,7 @@ import sliderVideo from "./js/slider-video.js"
 import gallery from "./js/gallery.js"
 import popup from "./js/popup.js"
 import calculatorTickets from "./js/tickets-calculator.js"
-// import map from "./js/map.js"
+import map from "./js/map.js"
 import validation from "./js/validation.js"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gallery()
   popup()
   calculatorTickets()
-  // map()
+  map()
   validation()
 
 })
