@@ -36,6 +36,7 @@ button {
   /* border: 1px solid yellowgreen; */
 }
 .header-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,10 +102,72 @@ button {
 }
 .welcome-container {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   height: 750px;
 }
+
+/* burger menu */
+.burger-menu {
+  position: absolute;
+  width: 297px;
+  height: 585px;
+  padding-top: 25px;
+  padding-left: 35px;
+  transform: translate(-100%, 0) scale(0, 1);
+
+  transition: all .5s ease 0s;
+}
+.burger-menu.open {
+  transform: translate(0, 0) scale(1);
+}
+.nav-list-burger {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 122px;
+  height: 263px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.nav-list-burger li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.burger-icon {
+  position: absolute;
+  width: 32px;
+  height: 18px;
+  flex-direction: column;
+  gap: 6px;
+  top: 56px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
+.line {
+  width: 32px;
+  height: 2px;
+  background-color: var(--light);
+
+  transition: background-color .2s linear;
+}
+.burger-icon:hover .line {
+  background-color: var(--gold);
+}
+.burger-icon.active .line:nth-child(2) {
+  display: none;
+}
+.burger-icon.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-icon.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
 .welcome-title {
   position: absolute;
   top: 150px;
@@ -112,6 +175,11 @@ button {
   z-index: 10;
   display: flex;
   flex-direction: column;
+
+  transition: opacity .2s linear;
+}
+.welcome-title.hidden {
+  opacity: 0;
 }
 h1 {
   font-family: "Forum";
@@ -148,6 +216,8 @@ h1 {
   top: 0;
   right: 0;
 }
+
+
 
 /* carousel */
 .carousel {
@@ -206,6 +276,7 @@ h1 {
   right: 0;
   width: 600px;
   height: 120px;
+  z-index: 10;
   background-color: var(--dark);
   display: flex;
   justify-content: space-between;
@@ -258,7 +329,6 @@ h1 {
 .arrow-right {
   mask-image: url("./assets/svg/right.svg");
 }
-
 
 
 /* visiting */
@@ -1464,8 +1534,74 @@ footer {
 }
 
 
-@media (max-width: 767px) {
-  body {
-    background-color: yellowgreen;
+
+/* for point 1024 */
+
+@media (max-width: 1919px) {
+  .container {
+    width: 984px;
+  }
+  .header {
+    height: 130px;
+  }
+  .nav-list {
+    display: none;
+  }
+  .burger-icon {
+    display: flex;
+  }
+  .welcome {
+    height: 585px;
+  }
+  .welcome-container {
+    height: 585px;
+  }
+  h1 {
+    font-size: 50px;
+    font-weight: 400;
+  }
+  .welcome-title {
+    top: 50px;
+  }
+  .welcome-subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    padding-bottom: 50px;
+  }
+  .welcome-button {
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 18px;
+  }
+  .carousel {
+    width: 700px;
+    height: 525px;
+  }
+  .welcome-item {
+    width: 700px;
+    height: 525px;
+  }
+  .item-container {
+    left: -700px;
+    height: 525px;
+  }
+  .rectangle {
+    bottom: 0px;
+    right: 0;
+    width: 700px;
+    justify-content: end;
+    gap: 45px;
+    padding: 0 75px 0 0;
+  }
+  .rectangle-number {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40;
+  }
+  .square {
+    width: 12px;
+    height: 12px;
   }
 }

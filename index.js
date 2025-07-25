@@ -1,3 +1,4 @@
+import toggleBurger from "./js/burger.js"
 import sliderWelcome from "./js/slider-welcome.js"
 import explore from "./js/explore.js"
 import sliderVideo from "./js/slider-video.js"
@@ -9,6 +10,7 @@ import validation from "./js/validation.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   
+  toggleBurger()
   sliderWelcome()
   explore()
   sliderVideo()
