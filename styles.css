@@ -107,10 +107,61 @@ button {
   justify-content: space-between;
   height: 750px;
 }
+.welcome-title {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+
+  transition: opacity .2s linear;
+}
+.welcome-title.hidden {
+  opacity: 0;
+}
+h1 {
+  font-family: "Forum";
+  font-size: 80px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 90px;
+  color: var(--light);
+}
+.welcome-subtitle {
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--light);
+  padding: 25px 0 75px 0;
+}
+.welcome-button {
+  text-decoration: none;
+  color: var(--light);
+  letter-spacing: 2px;
+  width: 360px;
+  height: 75px;
+  border-radius: 10px;
+  background-color: var(--red);
+  text-align: center;
+  padding-top: 25px;
+
+  transition: background-color .2s linear;
+}
+.welcome-button:hover {
+  background-color: var(--gold);
+}
+.welcome-slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 
 /* burger menu */
 .burger-menu {
+  display: none;
   position: absolute;
+  z-index: 100;
   width: 297px;
   height: 585px;
   padding-top: 25px;
@@ -168,55 +219,23 @@ button {
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-.welcome-title {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-
-  transition: opacity .2s linear;
-}
-.welcome-title.hidden {
-  opacity: 0;
-}
-h1 {
-  font-family: "Forum";
-  font-size: 80px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  line-height: 90px;
-  color: var(--light);
-}
-.welcome-subtitle {
-  font-size: 28px;
-  letter-spacing: 2px;
-  color: var(--light);
-  padding: 25px 0 75px 0;
-}
-.welcome-button {
-  text-decoration: none;
-  color: var(--light);
-  letter-spacing: 2px;
-  width: 360px;
-  height: 75px;
-  border-radius: 10px;
-  background-color: var(--red);
-  text-align: center;
-  padding-top: 25px;
-
-  transition: background-color .2s linear;
-}
-.welcome-button:hover {
-  background-color: var(--gold);
-}
-.welcome-slider {
-  position: absolute;
+.burger-overlay {
+  position: fixed;
   top: 0;
+  left: 0;
+  bottom: 0;
   right: 0;
-}
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
 
+  transition: all .2s linear;
+}
+.burger-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
 
 
 /* carousel */
@@ -1546,6 +1565,9 @@ footer {
   }
   .nav-list {
     display: none;
+  }
+  .burger-menu {
+    display: block;
   }
   .burger-icon {
     display: flex;
